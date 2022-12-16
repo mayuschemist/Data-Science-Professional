@@ -1,0 +1,7 @@
+Use the make_graph function to graph the Tesla Stock Data, also provide a title for the graph.
+Use the make_graph function to graph the GameStop Stock Data, also provide a title for the graph.
+#1
+make_graph(tesla_data, tesla_revenue, 'Tesla')
+
+#2
+make_graph(gme_data, gme_revenue, 'GameStop')
