@@ -1,0 +1,19 @@
+#1
+gme_url = "https://www.macrotrends.net/stocks/charts/GME/gamestop/revenue"
+gme_html_data = requests.get(gme_url).text
+
+#2
+gme_soup = BeautifulSoup(gme_html_data, "html5lib")
+
+#3
+gme_tables = gme_soup.find_all('table')
+
+for index,table in enumerate(gme_tables):
+    if ("GameStop Quarterly Revenue" in str(table)):
+        gme_table_index = index
+
+gme_revenue = pd.DataFrame(columns=["Date", "Revenue"])
+
+for row in gme_tables[gme_table_index].tbody.find_all("tr"):
+    col = row.find_all("td")
+    if (col !=[]):
