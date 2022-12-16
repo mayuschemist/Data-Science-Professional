@@ -17,3 +17,9 @@ gme_revenue = pd.DataFrame(columns=["Date", "Revenue"])
 for row in gme_tables[gme_table_index].tbody.find_all("tr"):
     col = row.find_all("td")
     if (col !=[]):
+        date = col[0].text
+        revenue = col[1].text.replace("$", "").replace(",", "")
+        gme_revenue = gme_revenue.append({"Date" : date, "Revenue" : revenue}, ignore_index=True)
+
+#4
+gme_revenue.tail()
