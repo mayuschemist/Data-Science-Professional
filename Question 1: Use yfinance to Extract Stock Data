@@ -1,0 +1,9 @@
+#1
+tesla = yf.Ticker("TSLA")
+
+#2
+tesla_data = tesla.history(period="max")
+
+#3
+tesla_data.reset_index(inplace=True)
+tesla_data.head()
