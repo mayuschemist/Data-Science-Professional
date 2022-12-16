@@ -1,9 +1,0 @@
-#1
-gamestop = yf.Ticker("GME")
-
-#2
-gme_data = gamestop.history(period="max")
-
-#3
-gme_data.reset_index(inplace=True)
-gme_data.head()
